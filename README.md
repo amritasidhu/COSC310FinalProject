@@ -69,11 +69,11 @@ Further, this Chatbot is connected to 2 API's. A API is a Application Programmin
 
 ## **List of New Features**
 
-### 7. Extract Knowledge from Main Keywords
+### 1. Extract Knowledge from Main Keywords
 
 This bot provides a definition and more information based on the key word from the question that the user asks the bot.
 
-### 8. Translate Response
+### 2. Translate Response
 
 The user can choose to have the response they recieve from the bot translated to French or Punjabi. They can also change back to English, or switch between languages at any time. 
 

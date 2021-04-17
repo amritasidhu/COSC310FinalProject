@@ -1,6 +1,6 @@
 # **COSC310-Interactive-Conversational-Agent**
 
-## **Individual Project Based off Group 23**
+## **Individual Project**
 
 This is Amrita Sidhu's Individual project working off from Group 23's Assignment 3. 
 This project was created for COSC 310, and its goal is to create an interactive conversational agent that would take in sentence input from the user and would output an appropriate response. The ChatBot we created is based on the current Prime Minister of Canada, Justin Trudeau, who answers the user's questions based on his past, present, future and his relationships.

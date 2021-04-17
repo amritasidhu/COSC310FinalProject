@@ -5,6 +5,10 @@
 from tkinter import *
 from chatbot import chat
 from PIL import ImageTk, Image
+from googletranslateAPI import toFrench
+from googletranslateAPI import toPunjabi
+from wikipediaAPI import forInformation
+from syn_recognition import pos_tag
 
 
 # Create unresizable window and title it "Interactive Chatbot"
@@ -35,18 +39,54 @@ text.grid(row = 1, column = 0, columnspan = 2)
 scroll = Scrollbar(root, command = text.yview())
 text['yscrollcommand'] = scroll.set
 scroll.place(relx = 0.97, rely = 0.12, height = 572)
-text.insert(END, "Enter your message(type 'quit' to exit):\n")
+text.insert(END, "Enter your message(type 'quit' to exit, type 'french' for responses in French and 'punjabi' for responses in Punjabi, and 'english' for responses in English.):\n")
+
 
 
 # This method takes input from the entry box, calls the chat() function from 'chatbot.py' and prints both the input and the bot's response in the text box
 # If user chooses to quit, the window is shut and the program is terminated.
+
+    frenchResponse = False
+    punjabiResponse = False
+
 def present_and_clear(event = '<Return>'):
+    #we will need a global variable which will allow us to modify it outside of this method, boolean. 
+    global frenchResponse 
+    global punjabiResponse
+
     out = "You: " + msg.get()
     text.insert(END, "\n" + out)
     if msg.get().lower() == "quit":
         root.destroy()
+    elif msg.get() == 'french'
+        frenchResponse = True
+        punjabiResponse = False
+        text.insert(END,"\n" + "Justin: transitioning to French")
+        text.see(END)
+        msg.delete(0, 'end')
+    elif msg.get() == 'punjabi'
+        punjabiResponse = True
+        frenchResponse = False
+        text.insert(END,"\n" + "Justin: transitioning to Punjabi")
+        text.see(END)
+        msg.delete(0, 'end')
+    elif msg.get() == 'english'
+        #default ive set to false outside this function, false means english or back to english. 
+        frenchResponse = False
+        punjabiResponse = False
+        text.insert(END,"\n" + "Justin: transitioning to English")
+        text.see(END)
+        msg.delete(0, 'end')
+    elif frenchResponse
+        text.insert(END,"\n" + "Justin: " + toFrench(chat(msg.get())) + "Further: " forInformation(pos_tag(msg.get)))
+        text.see(END)
+        msg.delete(0, 'end')
+    elif punjabiResponse
+        text.insert(END,"\n" + "Justin: " + toPunjabi(chat(msg.get())) + "Further: " forInformation(pos_tag(msg.get)))
+        text.see(END)
+        msg.delete(0, 'end')
     else:
-        text.insert(END,"\n" + "Justin: " + chat(msg.get()))
+        text.insert(END,"\n" + "Justin: " + chat(msg.get()) + "Further: " forInformation(pos_tag(msg.get)))
         text.see(END)
         msg.delete(0, 'end')
 

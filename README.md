@@ -1,6 +1,6 @@
 # **COSC310-Interactive-Conversational-Agent**
 
-## **Individual Project Based off Group 23**
+## **Individual Project**
 
 This is Amrita Sidhu's Individual project working off from Group 23's Assignment 3. 
 This project was created for COSC 310, and its goal is to create an interactive conversational agent that would take in sentence input from the user and would output an appropriate response. The ChatBot we created is based on the current Prime Minister of Canada, Justin Trudeau, who answers the user's questions based on his past, present, future and his relationships.
@@ -11,7 +11,7 @@ The idea behind using tensorflow is that with a fully inter-connected neural net
 
 We have also implemented some features to further enhance the user's experience and to improve the flow of conversation with the chat bot. A Graphical User Interfance(GUI) has been used in place of the terminal for input/output, so that the user has a more pleasant experience when talking with the bot. The bot also utilizes Stanford's CoreNLP Toolkit to make use of features such as Sentiment Analysis, which allows the bot to provide appropriate responses to statements that are not not present in the the question bank, and Part-of-speech(POS) tagging which helps the bot recognize certain key words as parts of speech(useful for performing other functions). Synonym recognition was also implemented with the use of NLTK's WordNet. This feature helps the bot understand a wider range of vocabulary and sentences while providing the correct response.
 
-Further, this Chatbot now has two new implementations. It is now connected to 2 API's. A API is a Application Programming Interface, which allows me to connect this GUI to web applications and access and use their data. Specifically, I have connected to a Wikipedia API for the purpose of providing a definition and more information on the question the user asks the bot. This is done by it being linked with synonym recognition, and it giving a defintion based on the key word. Second, I have connected to a Google Translate API which allows the user to choose whether they would like to get a response in English, French, Punjabi. The user is able to just type in the language they would like for their responses to be in out of the three languages.
+Further, this Chatbot is connected to 2 API's. A API is a Application Programming Interface, which allows me to connect this GUI to web applications and access and use their data. Specifically, I have connected to a Wikipedia API for the purpose of providing a definition and more information on the question the user asks the bot. This is done by it being linked with synonym recognition, and it giving a defintion based on the key word. Second, I have connected to a Google Translate API which allows the user to choose whether they would like to get a response in English, French, Punjabi. The user is able to just type in the language they would like for their responses to be in out of the three languages.
 ## **Downloading required APIs**
 > ```install nltk```  https://www.nltk.org/install.html
 >
@@ -29,7 +29,8 @@ Further, this Chatbot now has two new implementations. It is now connected to 2 
 >
 > ```install wikipedia``` https://pypi.org/project/wikipedia/
 
-## **Google Maps Setting up**
+
+
 ## **Setting up**
 * Clone the COSC310-Interactive-Conversational-Agent repository
 * Open ```chatbot.py``` in your prefered Python IDE
@@ -63,16 +64,16 @@ Further, this Chatbot now has two new implementations. It is now connected to 2 
 * **syn_recognition.py** *Contains functions that tag parts-of-speech in user's input, and creates different sentences with different combinations of synonyms*
 * **test_chatbot.py** *Contains unit tests for major functions and classes to validate them*
 * **googletranslateAPI.py** *Contains two functions, one which will translate response to French,and one which will translate response to Punjabi.*
-**wikipediaAPI.py** *Contains a function that grabs defintion which is the first sentence, and two more sentences for further clarity if necessary.*
+* **wikipediaAPI.py** *Contains a function that grabs defintion which is the first sentence, and two more sentences for further clarity if necessary.*
 
 
 ## **List of New Features**
 
-### 7. Extract Knowledge from Main Keywords
+### 1. Extract Knowledge from Main Keywords
 
 This bot provides a definition and more information based on the key word from the question that the user asks the bot.
 
-### 8. Translate Response
+### 2. Translate Response
 
-The user may choose to have the response they recieve from the bot translated to French or Punjabi. They can also change back to English, or switch between languages at any time. 
+The user can choose to have the response they recieve from the bot translated to French or Punjabi. They can also change back to English, or switch between languages at any time. 
 
